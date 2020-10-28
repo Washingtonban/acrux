@@ -16,14 +16,7 @@ class Base(models.Model):
         abstract = True
 
 
-class Produto(Produto):
-    pass
-
-class Pessoa(Pessoa):
-    pass
-
-
 class Evento(Base):
     data_hora = models.DateTimeField()
-    Produto = models.ForeignKey("Produto", on_delete=models.CASCADE, related_name='Evento')
-    Pessoa = models.ForeignKey("Pessoa", on_delete=models.CASCADE, related_name='Evento')
+    produto = models.ForeignKey(Produto, on_delete=models.CASCADE)
+    pessoa = models.ForeignKey(Pessoa, on_delete=models.CASCADE)

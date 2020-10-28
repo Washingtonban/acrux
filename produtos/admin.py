@@ -8,4 +8,5 @@ class ProdutoAdmin(admin.ModelAdmin):
                     'preco',
                     'criacao',
                     'atualizacao',
+                    'empresa',
                     'ativo')

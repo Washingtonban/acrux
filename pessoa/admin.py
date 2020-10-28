@@ -10,6 +10,4 @@ class PessoaAdmin(admin.ModelAdmin):
                     'telefone',
                     'grupo',
                     'usuario',
-                    'criacao',
-                    'atualizacao',
                     'ativo')

@@ -10,5 +10,5 @@ class EmpresaAdmin(admin.ModelAdmin):
                     'telefone',
                     'grupo',
                     'criacao',
-                    'atualizacao',
+                    'usuario',
                     'ativo')
