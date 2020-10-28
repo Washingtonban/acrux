@@ -2,7 +2,7 @@ from django.db import models
 from phone_field import PhoneField
 from django_enumfield import enum
 
-import pessoa
+from pessoa.models import Pessoa
 
 
 class Base(models.Model):
@@ -25,10 +25,7 @@ class Empresa(Base):
     email = models.EmailField()
     telefone = models.IntegerField()
     grupo = enum.EnumField(AtributoEmpresa)
-    # vendedor = models.OneToOneField(pessoa, on_delete=models.CASCADE)
-    # usuario = models.OneToOneField(pessoa, on_delete=models.CASCADE)
-
-    # cliente = models.OneToOneField(empresa, on_delete=models.CASCADE)
+    usuario = models.ForeignKey(Pessoa, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.nome
