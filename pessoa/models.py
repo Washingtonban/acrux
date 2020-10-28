@@ -23,24 +23,15 @@ class AtributoPessoa(enum.Enum):
     FUNCIONARIO = 6
 
 class Pessoa(Base):
+    usuario = models.OneToOneField(User, on_delete=models.CASCADE)
     cpf = models.IntegerField()
     nome = models.CharField(max_length=255)
     email = models.EmailField()
     telefone = models.IntegerField()
     grupo = enum.EnumField(AtributoPessoa)
-    usuario = models.OneToOneField(User, on_delete=models.CASCADE)
+
 
     def __str__(self):
         return self.nome
 
-
-@receiver(post_save, sender=User)
-def create_user_pessoa(sender, instance, created, **kwargs):
-    if created:
-        Pessoa.objects.create(user=instance)
-
-
-@receiver(post_save, sender=User)
-def save_user_pessoa(sender, instance, **kwargs):
-    instance.pessoa.save()
 
