@@ -26,7 +26,7 @@ SECRET_KEY = ')mk_qq&v!*)l9lgl&%dfv!t(jk1=3+2bw_h9=4zt-rc=un6=-^'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['acrux-backend.herokuapp.com']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
