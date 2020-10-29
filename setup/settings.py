@@ -41,6 +41,8 @@ INSTALLED_APPS = [
 
     'django_filters',
     'rest_framework',
+    'widget_tweaks',
+    'tempus_dominus',
 
     'eventos',
     'empresas',
@@ -122,6 +124,8 @@ USE_L10N = True
 
 USE_TZ = True
 
+TEMPUS_DOMINUS_LOCALIZE = True
+
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
@@ -140,3 +144,4 @@ REST_FRAMEWORK = {
         'rest_framework.permissions.IsAuthenticatedOrReadOnly',
     )
 }
+
